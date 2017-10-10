@@ -9,6 +9,9 @@ import Rank from 'components/rank/rank.vue'
 // 搜索页面
 import Search from 'components/search/search.vue'
 
+
+
+import SingerMsg from 'components/singermsg/singermsg.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -29,7 +32,13 @@ export default new VueRouter({
     {
     // 歌手页面
       path: '/singer',
-      component: Singer
+      component: Singer,
+      children:[
+        {
+          path: ':id',
+          component: SingerMsg
+        }
+      ]
     },
     {
     // 排行页面

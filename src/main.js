@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
 import Vrouter from './router/index.js'
+import store from "./store/index.js"
 Vue.config.productionTip = false
 // 鼠标延迟200ms解决
 import fastclick from 'fastclick'
@@ -22,5 +23,6 @@ Vue.use(VueLazyload,{
 new Vue({
   el: '#musicApp',
   router: Vrouter,
+  store,
   render: h => h(App)
 })
