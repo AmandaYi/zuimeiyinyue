@@ -11,7 +11,9 @@ import Search from 'components/search/search.vue'
 
 
 
-import SingerMsg from 'components/singermsg/singermsg.vue'
+import SingerMsg from 'components/singer-msg/singer-msg.vue'
+
+
 Vue.use(VueRouter)
 
 export default new VueRouter({

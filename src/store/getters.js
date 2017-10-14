@@ -1,1 +1,1 @@
-export const singerMsg = state =>state.singer;
+export const singer = state =>state.singer;

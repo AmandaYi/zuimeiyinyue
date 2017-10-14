@@ -9,7 +9,7 @@
         <li v-for="group in data" class="list-group" ref="listGroup">
             <h2 class="list-group-title">{{group.title}}</h2>
             <ul>             
-              <li v-for="item in group.items" class="list-group-item" @click="toSingMsg(item)">
+              <li v-for="item in group.items" class="list-group-item" @click="selectSingerItem(item)">
                 <img v-lazy="item.singerAvatar"  class="avatar">
                 <span class="name">{{item.singerName}}</span>
               </li>
@@ -147,9 +147,9 @@
         this.$refs.listview.scrollToElement(this.$refs.listGroup[index], 0)
       },
       // 歌手详情页,广播
-      toSingMsg(item) {
-        this.$emit('singMsg', item)
-      },
+      selectSingerItem(item) {
+        this.$emit("selectSinger",item);
+      }
     },
     watch: {
       data() {

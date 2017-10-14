@@ -19,7 +19,9 @@ Vue.use(VueLazyload,{
   	loading: require("./base/load/loading.gif"),
  	attempt: 1
 })
-/* eslint-disable no-new */
+// 这里简直是所有的坑,
+
+// 这些键是固定不变的,我一直都是想改变,所有就会这里找不到哪里找不到
 new Vue({
   el: '#musicApp',
   router: Vrouter,

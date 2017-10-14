@@ -1,8 +1,9 @@
 <template>
     <div class="singer" ref="singer" >
-      <singer-list-view @singMsg="toSingerMsg" :data="singers" ref="list"></singer-list-view>
+      <singer-list-view @selectSinger="selectSingerMsg" :data="singers" ref="list"></singer-list-view>
       <router-view></router-view>
     </div>
+    
 </template>
 
 <script type="text/ecmascript-6">
@@ -120,13 +121,13 @@
         this.$refs.singer.style.bottom = bottom
         this.$refs.list.refresh()
       },
-      // 进入 详情页
-      toSingerMsg(singerMsg) {
+      // 进入 详情页,参数是广播的实例
+      selectSingerMsg(singer) {
         this.$router.push({
-          path: `/singer/${singerMsg.id}`
+          path: `/singer/${singer.singerMid}`
         })
         // 调用 
-        this.setSinger(singerMsg)
+        this.setSinger(singer)
       },
 
 

@@ -5,7 +5,9 @@
    <!-- 主导航   -->
    <app-nav></app-nav>
    <!-- 主路由 -->
-   <router-view></router-view>
+   <transition name="tabContent" mode="out-in">
+      <router-view></router-view>
+   </transition>
   </div>
 </template>
 
@@ -25,5 +27,10 @@ export default {
 }
 </script>
 <style scope lang="less">
-  
+  .tabContent-enter-active,.tabContent-leave-active{
+  transition: all 0.5s;
+  }
+  .tabContent-enter,.tabContent-leave-to{
+    transform: translate3d(-100%,0,0);
+  }
 </style>
